@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fihier js pour afficher et masquer les mots de passe -->
+    <script src="index.js"></script>
+    <!-- fichier js pour la validation du frmulaire -->
+    <script src="formvalidation.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription</title>
+  </head>
+  <body>
+    <div class="main row">
+      <!-- premier bloc contenant le formulaire -->
+      <div
+        class="p-form col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center"
+      >
+      <!-- debut formulaire -->
+        <form name="signupForm" class="form w-50" method="post">
+          <h2 class="titre">Inscription</h2>
+          <div class="form-group">
+            <input
+              name="nom"
+              type="text"
+              class="form-control"
+              placeholder="Nom"
+            />
+            <small class="msg-error" id="errorNom"></small>
+          </div>
+          <div class="form-group mt-2">
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              placeholder="Adresse Email"
+            />
+            <small class="msg-error" id="errorEmail"></small>
+          </div>
+
+          <div class="form-group mt-2">
+            <div class="input-group" id="show_hide_password">
+              <input
+                name="password"
+                class="form-control"
+                type="password"
+                placeholder="Mot de passe"
+              />
+              <a class="input-group-text" href="#"
+                ><i class="fa fa-eye-slash" aria-hidden="true"></i
+              ></a>
+            </div>
+            <small class="msg-error" id="errorPassword"></small>
+          </div>
+
+          <div class="form-group mt-2">
+            <div class="input-group" id="show_hide_confirmpassword">
+              <input
+                name="confirmPassword"
+                class="form-control"
+                type="password"
+                placeholder="Confirmer mot de passer"
+              />
+              <a class="input-group-text" href="#"
+                ><i class="fa fa-eye-slash" aria-hidden="true"></i
+              ></a>
+            </div>
+            <small class="msg-error" id="errorConfirmPassword"></small>
+          </div>
+
+          <div class="d-lg-flex d-md-flex justify-content-between mt-3">
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Se souvenir de moi</label
+              >
+            </div>
+            <button
+              type="button"
+              onclick="validateForm()"
+              class="btn btn-primary"
+            >
+              S'inscrire
+            </button>
+          </div>
+          <div class="d-flex flex-column align-items-center mt-5">
+            <button class="btn-75 btn btn-facebook">
+              <i class="fa fa-facebook"></i> S'inscrire avec Facebook
+            </button>
+            <button class="btn btn-75 mt-2 btn-google">
+              <i class="fa fa-google"></i> S'inscrire avec Google
+            </button>
+          </div>
+        </form>
+        <!-- fin formulaire -->
+      </div>
+
+      <!-- deuxieme bloc contenant l'image de droite, celui-ci ne s'affichera pas sur mobile -->
+      <div
+        class="p-img col-lg-6 col-md-6  d-flex flex-column d-none d-lg-flex d-md-flex d-print-block justify-content-center align-items-center"
+      >
+        <img class="image" src="./images/4.svg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
